@@ -11,6 +11,6 @@ setup(
         "Programming Language :: Python :: 3.10.4",
         "Operating System :: OS Independent"
         ],
-    install_requires=[],
+    install_requires=["scikit-learn", "pandas"],
     python_requires=">=3.10.4"
 )
