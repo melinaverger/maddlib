@@ -1,0 +1,6 @@
+OULAD configuration from experiments of https://github.com/melinaverger/MADD/:
+
+stClick (19964, 33)
+course 'FFF' (4740, 33)
+reduction (4740, 9)
+train-test split 7030 (3318, 8) (1422, 8)
