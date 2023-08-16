@@ -1,0 +1,8 @@
+LICENSE.md
+README.md
+setup.py
+src/maddpkg.egg-info/PKG-INFO
+src/maddpkg.egg-info/SOURCES.txt
+src/maddpkg.egg-info/dependency_links.txt
+src/maddpkg.egg-info/requires.txt
+src/maddpkg.egg-info/top_level.txt

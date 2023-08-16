@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: maddpkg
+Version: 0.0.1
+Summary: A Python package to compute the MADD metric
+Home-page: https://github.com/melinaverger/MADDpkg
+Author: Mélina Verger
+Author-email: melina.verger@lip6.fr
+License: CC BY-NC 4.0
+Classifier: Programming Language :: Python :: 3.10.4
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10.4
+License-File: LICENSE.md
