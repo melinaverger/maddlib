@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="maddpkg",
-    version="0.0.1",
+    version="0.1.0",
     description="A Python package to compute the MADD metric",
     url="https://github.com/melinaverger/MADDpkg",
     author="Mélina Verger",
@@ -14,6 +14,6 @@ setup(
         "Programming Language :: Python :: 3.10.4",
         "Operating System :: OS Independent"
         ],
-    install_requires=["scikit-learn", "pandas"],
+    install_requires=["scikit-learn", "pandas", "numpy"],
     python_requires=">=3.10.4"
 )
