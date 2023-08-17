@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="maddpkg",
-    version="0.2.0",
+    version="0.2.1",
     description="A Python package to compute the MADD metric",
     url="https://github.com/melinaverger/MADDpkg",
     author="Mélina Verger",
