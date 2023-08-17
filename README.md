@@ -6,8 +6,6 @@ This repository contains the source code of the Python package related to the [M
 
 If you are using this package, please cite (soon JEDM):
 
-```
-M. Verger, S. Lallé, F. Bouchet, and V. Luengo. Is your model ”MADD”? A Novel Metric to Evaluate Algorithmic Fairness for Predictive Student Models. In M. Feng, T. Käser, and P. Talukdar, editors, Proceedings of the 16th International Conference on Educational Data Mining, pages 91–102, Bengaluru, India, July 2023. International Educational Data Mining Society.
-```
+> M. Verger, S. Lallé, F. Bouchet, and V. Luengo. Is your model ”MADD”? A Novel Metric to Evaluate Algorithmic Fairness for Predictive Student Models. In M. Feng, T. Käser, and P. Talukdar, editors, Proceedings of the 16th International Conference on Educational Data Mining, pages 91–102, Bengaluru, India, July 2023. International Educational Data Mining Society.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
