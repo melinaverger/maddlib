@@ -27,7 +27,7 @@ def separate_sets(X, y, sf):
 
 
 def normalized_density_vector(pred_proba, e):
-    """Computes the density vector.
+    """Computes the density vector (\D_{G_0} or \D_{G_1}).
     
     Parameters
     ----------
