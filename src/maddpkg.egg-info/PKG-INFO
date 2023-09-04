@@ -9,4 +9,7 @@ License: CC BY-NC 4.0
 Classifier: Programming Language :: Python :: 3.10.4
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.10.4
+Provides-Extra: dev
 License-File: LICENSE.md
+
+This repository contains the source code of the Python package related to the MADD metric.
