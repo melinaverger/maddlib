@@ -4,7 +4,7 @@ setup(
     name="maddpkg",
     version="0.3.0",
     description="A Python package to compute the MADD metric",
-    long_description="This repository contains the source code of the Python package related to the MADD metric."
+    long_description="This repository contains the source code of the Python package related to the MADD metric.",
     url="https://github.com/melinaverger/MADDpkg",
     author="Mélina Verger",
     author_email="melina.verger@lip6.fr",
