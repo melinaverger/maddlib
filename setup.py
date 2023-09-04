@@ -10,7 +10,6 @@ setup(
     author="Mélina Verger",
     author_email="melina.verger@lip6.fr",
     package_dir={"":"src"},
-    packages=find_packages(where="src"),
     license="CC BY-NC 4.0",
     classifiers=[
         "Programming Language :: Python :: 3.10",
