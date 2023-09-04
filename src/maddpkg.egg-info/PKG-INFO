@@ -6,10 +6,21 @@ Home-page: https://github.com/melinaverger/MADDpkg
 Author: Mélina Verger
 Author-email: melina.verger@lip6.fr
 License: CC BY-NC 4.0
-Classifier: Programming Language :: Python :: 3.10.4
+Classifier: Programming Language :: Python :: 3.10
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.10.4
+Description-Content-Type: text/markdown
 Provides-Extra: dev
 License-File: LICENSE.md
 
-This repository contains the source code of the Python package related to the MADD metric.
+# MADD package
+
+[![Generic badge](https://img.shields.io/badge/python-3.10.4-green.svg)](https://shields.io/)
+
+This repository contains the source code of the Python package related to the [MADD metric](https://github.com/melinaverger/MADD).
+
+If you are using this package, please cite (soon JEDM):
+
+> M. Verger, S. Lallé, F. Bouchet, and V. Luengo. Is Your Model ”MADD”? A Novel Metric to Evaluate Algorithmic Fairness for Predictive Student Models. In M. Feng, T. Käser, and P. Talukdar, editors, *Proceedings of the 16th International Conference on Educational Data Mining*, pages 91–102, Bengaluru, India, July 2023. International Educational Data Mining Society.
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
