@@ -54,25 +54,6 @@ def normalized_density_vector(pred_proba_sfi, e):
     return  density_vector / np.sum(density_vector)
 
 
-def round_partial(value, resolution):
-    """Rounds numbers to a specific resolution.
-
-    Parameters
-    ----------
-    value : float
-        The value to be rounded at the nearest resolution
-    resolution : float
-        The resolution
-    
-    Returns
-    -------
-    float
-        The rounded value
-
-    """
-    return round(value/resolution) * resolution
-
-
 def MADD(X_test, pred_proba, sf, e):
     """Computes the MADD.
     
@@ -95,7 +76,7 @@ def MADD(X_test, pred_proba, sf, e):
     pred_proba_sf0, pred_proba_sf1 = separate_pred_proba(X_test, pred_proba, sf)
     D_G0 = normalized_density_vector(pred_proba_sf0, e)
     D_G1 = normalized_density_vector(pred_proba_sf1, e)
-    return round_partial(np.sum(np.abs(D_G0 - D_G1)), e)
+    return np.sum(np.abs(D_G0 - D_G1))
 
 
 def madd_plot(pred_proba_sf0, pred_proba_sf1, sf, e, model_name):
