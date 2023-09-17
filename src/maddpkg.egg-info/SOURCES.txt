@@ -3,6 +3,7 @@ README.md
 setup.py
 src/__init__.py
 src/maddpkg.py
+src/optimal_bandwidth.py
 src/maddpkg.egg-info/PKG-INFO
 src/maddpkg.egg-info/SOURCES.txt
 src/maddpkg.egg-info/dependency_links.txt
