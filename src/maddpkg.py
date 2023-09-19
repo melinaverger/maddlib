@@ -127,7 +127,7 @@ def madd_plot(pred_proba_sf0, pred_proba_sf1, sf, e, model_name):
     # plot D_G0
     ax0 = sns.histplot(ax=axes[0], data=pred_proba_sf1, kde=False, stat="proportion", color=color_gp1, bins=np.linspace(0,1,nb_bins))
     ax0.set_xlim(0, 1)
-    ax0.set_ylabel("Density", fontsize=16, fontweight='bold')
+    ax0.set_ylabel("Proportion", fontsize=16, fontweight='bold')
 
     # plot D_G1
     ax1 = sns.histplot(ax=axes[1], data=pred_proba_sf0, kde=False, stat="proportion", color=color_gp0, bins=np.linspace(0,1,nb_bins))
