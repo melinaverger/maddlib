@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="maddpkg",
-    version="0.5.3",
+    version="0.5.4",
     description="A Python package to compute MADD metric-related functions",
     long_description_content_type="text/markdown",
     long_description=open('README.md').read(),
