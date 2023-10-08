@@ -60,7 +60,7 @@ def MADD(h, X_test=None, pred_proba=None, sf=None, pred_proba_sf0=None, pred_pro
     
     Parameters
     ----------
-    h: float
+    h : float
         The bandwidth (previously called the probability sampling parameter)
     X_test : pd.DataFrame
         The test set
@@ -68,9 +68,9 @@ def MADD(h, X_test=None, pred_proba=None, sf=None, pred_proba_sf0=None, pred_pro
         The predicted probabilities of positive predictions (all)
     sf: str
         The name of the binary sensitive feature
-    pred_proba_sf0 : numpy.ndarray
+    pred_proba_sf0 : numpy.ndarray of shape (n, 1)
         The predicted probabilities of positive predictions of group 0
-    pred_proba_sf1 : numpy.ndarray
+    pred_proba_sf1 : numpy.ndarray of shape (n, 1)
         The predicted probabilities of positive predictions of group 1
     
     Returns
@@ -90,51 +90,51 @@ def MADD(h, X_test=None, pred_proba=None, sf=None, pred_proba_sf0=None, pred_pro
     
     D_G0 = normalized_density_vector(pred_proba_sf0, h)
     D_G1 = normalized_density_vector(pred_proba_sf1, h)
-    
+
     return np.sum(np.abs(D_G0 - D_G1))
 
 
-def madd_plot(pred_proba_sf0, pred_proba_sf1, sf, e, model_name):
+def madd_plot(h, pred_proba_sf0, pred_proba_sf1, legend_groups, title, figsize=(12, 4)):
     """Plots a visual approximation of the MADD.
 
     Parameters
     ----------
+    h : float
+        The bandwidth (previously called the probability sampling parameter)
     pred_proba_sf0 : np.ndarray of shape (n, 1)
-        The predicted probabilities of positive predictions for group 0
+        The predicted probabilities of positive predictions of group 0
     pred_proba_sf1 : np.ndarray of shape (n, 1)
-        The predicted probabilities of positive predictions for group 1
-    sf: str
-        The name of the binary sensitive feature
-    e: float
-        The probability sampling parameter
-    model_name: str
-        The name of the model that outputs the predicted probabilities
+        The predicted probabilities of positive predictions of group 1
+    legend_groups: str or 2-tuple
+        The name of the binary sensitive feature or the names of the two groups in a 2-tuple
+    title: str
+        The title of the graph (it could be the name of the model that outputs the predicted probabilities)
     
     Returns
     -------
     None
     """
 
-    nb_bins = int(np.floor(1/e))
+    nb_bins = int(np.floor(1/h))
 
     # Arbitrary choices of colors
-    if sf == "gender":
+    if legend_groups == "gender":
         color_gp1 = "mediumaquamarine"
         color_gp0 = "lightcoral"
-    elif sf == "imd_band" or sf == "poverty":
+    elif legend_groups == "imd_band" or legend_groups == "poverty":
         color_gp1 = "gold"
         color_gp0 = "dimgray"
-    elif sf == "disability":
+    elif legend_groups == "disability":
         color_gp1 = "mediumpurple"
         color_gp0 = "lightskyblue"
-    elif sf == "age_band" or sf == "age":
+    elif legend_groups == "age_band" or legend_groups == "age":
         color_gp1 = "salmon"
         color_gp0 = "seagreen"
     else:  # random colors
         color_gp1 = (np.random.random(), np.random.random(), np.random.random())
         color_gp0 = (np.random.random(), np.random.random(), np.random.random())
 
-    fig, axes = plt.subplots(1, 3, figsize=(10, 2.5), constrained_layout=True)  # figsize=(12, 4) for better visualization
+    fig, axes = plt.subplots(1, 3, figsize=figsize, constrained_layout=True)
     fig.supxlabel("Predicted probabilities  [0 ; 1]", fontsize=16, fontweight='bold')
 
     # plot D_G0
@@ -149,10 +149,14 @@ def madd_plot(pred_proba_sf0, pred_proba_sf1, sf, e, model_name):
     ax1.yaxis.set_visible(False)
 
     # plot the density estimates
-    ax2 = sns.kdeplot(ax=axes[2], data=pred_proba_sf1, color=color_gp1, label=sf + ": 1")
-    ax2 = sns.kdeplot(ax=axes[2], data=pred_proba_sf0, color=color_gp0, label=sf + ": 0")
+    if type(legend_groups) is str:
+        ax2 = sns.kdeplot(ax=axes[2], data=pred_proba_sf1, color=color_gp1, label=legend_groups + ": 1")
+        ax2 = sns.kdeplot(ax=axes[2], data=pred_proba_sf0, color=color_gp0, label=legend_groups + ": 0")
+    elif (type(legend_groups) is tuple) and (len(legend_groups) == 2):
+        ax2 = sns.kdeplot(ax=axes[2], data=pred_proba_sf1, color=color_gp1, label=legend_groups[1])
+        ax2 = sns.kdeplot(ax=axes[2], data=pred_proba_sf0, color=color_gp0, label=legend_groups[0])
     ax2.set_ylabel("Density", fontsize=16, fontweight='bold')
     ax2.set_xlim(0, 1)
     
-    plt.legend(bbox_to_anchor = (1.65, 0.5), loc='center right', prop={'weight':'bold'})
-    ax1.set_title(f"{model_name}", loc="center", fontsize=16, fontweight='bold')
+    plt.legend(bbox_to_anchor = (0.8, 1.25), loc='upper right', prop={'weight':'bold'})
+    ax1.set_title(f"{title}", loc="center", fontsize=16, fontweight='bold', y=1.1)
