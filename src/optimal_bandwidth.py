@@ -1,6 +1,28 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+def generate_bandwidths(N):
+    """Generates N relevant values of bandwidth.
+
+    Parameters
+    ----------
+    N : int
+        The number of relevant and distinct values of h
+
+    Returns
+    -------
+    numpy.ndarray
+        The bandwidth 1-d vector
+    """
+    if type(N) is not int:
+        raise Exception("N should be an integer.")
+    
+    m = np.arange(1, N, 1)  # list of number of bins
+    h = 1/m
+    return h[::-1]
+
+
 def calculate_std(y, start, end):
     """Calculates the standard deviation in the index interval [start, end] of y.
     
