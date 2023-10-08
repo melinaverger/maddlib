@@ -80,7 +80,7 @@ def MADD(X_test, pred_proba, sf, e):
     return np.sum(np.abs(D_G0 - D_G1))
 
 
-def madd_plot(pred_proba_sf0, pred_proba_sf1, sf, e, model_name):
+def maddplot(pred_proba_sf0, pred_proba_sf1, sf, e, model_name):
     """Plots a visual approximation of the MADD.
 
     Parameters
