@@ -102,7 +102,7 @@ def find_stable_interval(h_list, madd_list, n0=None, n1=None, min_interval_lengt
     return result
 
 
-def plot_stable_interval(h_list, madd_list, show_stable=True, indexes=None, show_order=False, n0=None, n1=None, zoom="None", legend=True):
+def plot_stable_interval(h_list, madd_list, show_stable=True, indexes=None, show_order=False, n0=None, n1=None, zoom="None", legend=True, ylim=None):
     """Plots MADD results according to the bandwidth.
     
     Parameters
@@ -121,10 +121,12 @@ def plot_stable_interval(h_list, madd_list, show_stable=True, indexes=None, show
         The number of samples in the group 0
     n1 : int
         The number of samples in the group 1
-    zoom : str or tuple
+    zoom : str or 2-tuple
         To specify some zoom options
     legend : boolean
         To show the legend or not
+    ylim : 2-tuple
+        To specify the y-axis values to show
     
     Returns
     -------
@@ -160,39 +162,39 @@ def plot_stable_interval(h_list, madd_list, show_stable=True, indexes=None, show
     if zoom == "None":
         plt.xlim(0, np.max(h_list))
         if show_order:
-            plt.axvline(x= 0.05 * order, color="r", linestyle="--", alpha=0.5, label="h inferior order ({0})".format(round(0.05 * order, 2)))
-            plt.axvline(x= 0.1 * order, color="r", linestyle="--", alpha=0.7, label="h middle order ({0})".format(round(0.1 * order, 2)))
+            plt.axvline(x= 0.01 * order, color="r", linestyle="--", alpha=0.5, label="h inferior order ({0})".format(round(0.05 * order, 2)))
+            #plt.axvline(x= 0.1 * order, color="r", linestyle="--", alpha=0.7, label="h middle order ({0})".format(round(0.1 * order, 2)))
             plt.axvline(x= order , color="r", linestyle="--", label="h superior order ({0})".format(round(order, 2)))
             if legend is True:
                 plt.legend()
     elif zoom == "sup order":
         plt.xlim(0, order+0.001)
         if show_order:
-            plt.axvline(x= 0.05 * order, color="r", linestyle="--", alpha=0.5, label="h inferior order ({0})".format(round(0.05 * order, 2)))
-            plt.axvline(x= 0.1 * order, color="r", linestyle="--", alpha=0.7, label="h middle order ({0})".format(round(0.1 * order, 2)))
+            plt.axvline(x= 0.01 * order, color="r", linestyle="--", alpha=0.5, label="h inferior order ({0})".format(round(0.05 * order, 2)))
+            #plt.axvline(x= 0.1 * order, color="r", linestyle="--", alpha=0.7, label="h middle order ({0})".format(round(0.1 * order, 2)))
             plt.axvline(x= order , color="r", linestyle="--", label="h superior order ({0})".format(round(order, 2)))
             if legend is True:
                 plt.legend()
     elif zoom == "middle order":
         plt.xlim(0, 0.1 * order+0.001)
         if show_order:
-            plt.axvline(x= 0.05 * order, color="r", linestyle="--", alpha=0.5, label="h inferior order ({0})".format(round(0.05 * order, 2)))
-            plt.axvline(x= 0.1 * order, color="r", linestyle="--", alpha=0.7, label="h middle order ({0})".format(round(0.1 * order, 2)))
+            plt.axvline(x= 0.01 * order, color="r", linestyle="--", alpha=0.5, label="h inferior order ({0})".format(round(0.05 * order, 2)))
+            #plt.axvline(x= 0.1 * order, color="r", linestyle="--", alpha=0.7, label="h middle order ({0})".format(round(0.1 * order, 2)))
             if legend is True:
                 plt.legend()
     elif zoom == "inf order":
-        plt.xlim(0, 0.05 * order+0.001)
+        plt.xlim(0, 0.01 * order+0.001)
         if show_order:
-            plt.axvline(x= 0.05 * order, color="r", linestyle="--", alpha=0.5, label="h inferior order ({0})".format(round(0.05 * order, 2)))
+            plt.axvline(x= 0.01 * order, color="r", linestyle="--", alpha=0.5, label="h inferior order ({0})".format(round(0.05 * order, 2)))
             if legend is True:
                 plt.legend()
     elif zoom == "stable":
         plt.xlim(h_list[indexes[0]]-0.001, h_list[indexes[1]]+0.001)
         if show_order:
-            if h_list[indexes[0]] <= 0.05 * order <= h_list[indexes[1]]:
-                plt.axvline(x= 0.05 * order, color="r", linestyle="--", alpha=0.5, label="h inferior order ({0})".format(round(0.05 * order, 2)))
-            if h_list[indexes[0]] <= 0.1 * order <= h_list[indexes[1]]:
-                     plt.axvline(x= 0.1 * order, color="r", linestyle="--", alpha=0.7, label="h middle order ({0})".format(round(0.1 * order, 2)))
+            if h_list[indexes[0]] <= 0.01 * order <= h_list[indexes[1]]:
+                plt.axvline(x= 0.01 * order, color="r", linestyle="--", alpha=0.5, label="h inferior order ({0})".format(round(0.05 * order, 2)))
+            #if h_list[indexes[0]] <= 0.1 * order <= h_list[indexes[1]]:
+                    #plt.axvline(x= 0.1 * order, color="r", linestyle="--", alpha=0.7, label="h middle order ({0})".format(round(0.1 * order, 2)))
             if h_list[indexes[0]] <= order <= h_list[indexes[1]]:
                     plt.axvline(x= order , color="r", linestyle="--", label="h superior order ({0})".format(round(order, 2)))
             if legend is True:
@@ -200,18 +202,24 @@ def plot_stable_interval(h_list, madd_list, show_stable=True, indexes=None, show
     elif type(zoom) is tuple:
         plt.xlim(zoom[0], zoom[1])
         if show_order:
-            if zoom[0] <= 0.05 * order <= zoom[1]:
-                plt.axvline(x= 0.05 * order, color="r", linestyle="--", alpha=0.5, label="h inferior order ({0})".format(round(0.05 * order, 2)))
-            if zoom[0] <= 0.1 * order <= zoom[1]:
-                     plt.axvline(x= 0.1 * order, color="r", linestyle="--", alpha=0.7, label="h middle order ({0})".format(round(0.1 * order, 2)))
+            if zoom[0] <= 0.01 * order <= zoom[1]:
+                plt.axvline(x= 0.01 * order, color="#F97306", linestyle="--", alpha=0.5, label="h inferior order ({0})".format(round(0.05 * order, 2)))
+            #if zoom[0] <= 0.1 * order <= zoom[1]:
+                    #plt.axvline(x= 0.1 * order, color="r", linestyle="--", alpha=0.7, label="h middle order ({0})".format(round(0.1 * order, 2)))
             if zoom[0] <= order <= zoom[1]:
                     plt.axvline(x= order , color="r", linestyle="--", label="h superior order ({0})".format(round(order, 2)))
             if legend is True:
                 plt.legend()
     else:
-        raise ValueError('zoom must be "None", "sup order", "middle order", "inf order", "stable" or a tuple.')
+        raise ValueError('zoom must be "None", "sup order", "middle order", "inf order", "stable" or a 2-tuple.')
 
-    plt.ylim(-0.1, 2)
-    plt.xlabel("h")
-    plt.ylabel("MADD")
+    if ylim is not None:
+        if type(ylim) != tuple:
+            raise Exception("ylim should be a tuple.")
+        plt.ylim(ylim)
+    else:
+        plt.ylim((-0.1, 2))
+
+    plt.xlabel("h", fontsize=16, fontweight='bold')
+    plt.ylabel("MADD", fontsize=16, fontweight='bold')
     plt.show()
