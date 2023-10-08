@@ -24,7 +24,7 @@ def calculate_std(y, start, end):
         if end >= len(y):
             raise Exception("end should not be greater than len(y) - 1.")
     else:
-        raise Exception("start and end should be integers.")
+        raise Exception("start and end should be positive integers.")
     
     return np.std(y[start:end+1])
 
