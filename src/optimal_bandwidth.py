@@ -77,7 +77,7 @@ def find_stable_interval(h_list, madd_list, n0=None, n1=None, min_interval_lengt
     """
     # if n0 and n1 are given, min_interval_length is automatically calculated (even if given)
     # otherwise, min_interval_length is set either to the given value or to a default value
-    if type(n0) is int and type(n1) is int:
+    if (type(n0) is int) and (type(n1) is int):
         order = ( (n0**(1/2) + n1**(1/2)) / (n0*n1)**(1/2) )**(2/3)
         min_interval_length = order * (1 - 0.1) / 2
     elif n0 is None or n1 is None:
