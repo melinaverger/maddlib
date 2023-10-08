@@ -1,1 +1,1 @@
-from . import optimal_bandwidth
+import optimal_bandwidth

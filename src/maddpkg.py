@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from . import optimal_bandwidth
+import optimal_bandwidth
 
 
 def separate_pred_proba(X, pred_proba, sf):
@@ -80,7 +80,7 @@ def MADD(X_test, pred_proba, sf, e):
     return np.sum(np.abs(D_G0 - D_G1))
 
 
-def maddplot(pred_proba_sf0, pred_proba_sf1, sf, e, model_name):
+def madd_plot(pred_proba_sf0, pred_proba_sf1, sf, e, model_name):
     """Plots a visual approximation of the MADD.
 
     Parameters
@@ -98,9 +98,7 @@ def maddplot(pred_proba_sf0, pred_proba_sf1, sf, e, model_name):
     
     Returns
     -------
-    Axes
-        The Axes of the subplot
-
+    None
     """
 
     nb_bins = int(np.floor(1/e))
