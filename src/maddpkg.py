@@ -55,12 +55,12 @@ def normalized_density_vector(pred_proba_sfi, e):
     return  density_vector / np.sum(density_vector)
 
 
-def MADD(h, X_test=None, pred_proba=None, sf=None, pred_proba_sf0=None, pred_proba_sf1=None):
+def MADD(h, X_test=None, pred_proba=None, sf=None, pred_proba_sf0=None, pred_proba_sf1=None, min_nb_points=50):
     """Computes the MADD.
     
     Parameters
     ----------
-    h : float
+    h : float or str
         The bandwidth (previously called the probability sampling parameter)
     X_test : pd.DataFrame
         The test set
@@ -88,10 +88,16 @@ def MADD(h, X_test=None, pred_proba=None, sf=None, pred_proba_sf0=None, pred_pro
         if (pred_proba_sf0 is None) or (pred_proba_sf1 is None):
             raise Exception("Both preb_proba_sf0 and preb_proba_sf1 should be given.")
     
-    D_G0 = normalized_density_vector(pred_proba_sf0, h)
-    D_G1 = normalized_density_vector(pred_proba_sf1, h)
+    if h == "auto":
+        Lh = optimal_bandwidth.generate_bandwidths(500)
+        Lmadd = [MADD(hi, X_test, pred_proba, sf, pred_proba_sf0, pred_proba_sf1) for hi in Lh]
+        interval = optimal_bandwidth.find_stable_interval(Lh, Lmadd, min_nb_points=min_nb_points)
+        return interval["madd average"]
 
-    return np.sum(np.abs(D_G0 - D_G1))
+    else:
+        D_G0 = normalized_density_vector(pred_proba_sf0, h)
+        D_G1 = normalized_density_vector(pred_proba_sf1, h)
+        return np.sum(np.abs(D_G0 - D_G1))
 
 
 def madd_plot(h, pred_proba_sf0, pred_proba_sf1, legend_groups, title, figsize=(12, 4)):
