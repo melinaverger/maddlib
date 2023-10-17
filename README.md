@@ -18,6 +18,8 @@ or
 python3 -m pip install maddpkg
 ```
 
+If an error occurs, please check first that your Python version is greater than 3.10.4.
+
 ## Reference
 
 If you are using this package, please cite:
