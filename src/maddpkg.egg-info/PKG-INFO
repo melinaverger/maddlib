@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: maddpkg
-Version: 0.5.6
+Version: 0.5.7
 Summary: A Python package to compute MADD metric-related functions
 Home-page: https://github.com/melinaverger/MADDpkg
 Author: Mélina Verger
@@ -38,6 +38,8 @@ or
 ```
 python3 -m pip install maddpkg
 ```
+
+If an error occurs, please check first that your Python version is greater than 3.10.4.
 
 ## Reference
 
