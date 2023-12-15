@@ -1,0 +1,11 @@
+LICENSE.md
+README.md
+setup.py
+src/__init__.py
+src/maddlib.py
+src/optimal_bandwidth.py
+src/maddlib.egg-info/PKG-INFO
+src/maddlib.egg-info/SOURCES.txt
+src/maddlib.egg-info/dependency_links.txt
+src/maddlib.egg-info/requires.txt
+src/maddlib.egg-info/top_level.txt

@@ -1,3 +1,24 @@
+Metadata-Version: 2.1
+Name: maddlib
+Version: 0.5.8
+Summary: A Python package to compute MADD metric-related functions
+Home-page: https://github.com/melinaverger/maddlib
+Author: Mélina Verger
+Author-email: melina.verger@lip6.fr
+License: CC BY-NC 4.0
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10.4
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: scikit-learn
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: seaborn
+Requires-Dist: matplotlib
+Provides-Extra: dev
+Requires-Dist: twine>=4.0.2; extra == "dev"
+
 # MADD package
 
 [![Generic badge](https://img.shields.io/badge/python-3.10.4-green.svg)](https://shields.io/)
