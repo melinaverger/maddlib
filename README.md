@@ -6,19 +6,15 @@ This repository contains the source code of the Python package related to the [M
 
 ## Installation
 
-This package is available on [pypi](https://pypi.org/project/maddlib/) and can be installed using `pip`:
+This package is available on [pypi](https://pypi.org/project/maddlib/).
 
-```
-pip install maddlib
-```
+It can be installed using `pip` (with command line `pip install maddlib` or `python3 -m pip install maddlib`).
 
-or 
+If an error occurs, please check first that your Python version is greater than 3.10.4.
 
-```
-python3 -m pip install maddlib
-```
+## Getting started
 
-If an error occurs, please check first your Python version is greater than 3.10.4.
+Some example notebooks are in `test` folder. You can use the MADD to evaluate algorithmic fairness or to mitigate algorithmic unfairness.
 
 ## Reference
 
