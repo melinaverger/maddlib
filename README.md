@@ -1,4 +1,4 @@
-# MADD package
+# maddlib
 
 [![Generic badge](https://img.shields.io/badge/python-3.10.4-green.svg)](https://shields.io/)
 
@@ -18,7 +18,7 @@ or
 python3 -m pip install maddlib
 ```
 
-If an error occurs, please check first that your Python version is greater than 3.10.4.
+If an error occurs, please check first your Python version is greater than 3.10.4.
 
 ## Reference
 
