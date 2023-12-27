@@ -6,7 +6,7 @@ This repository contains the source code of the Python package related to the [M
 
 ## Installation
 
-This package is available on [pypi](https://pypi.org/project/maddlib/).
+This package is available on [pypi](https://pypi.org/project/maddlib/) and [GitHub](https://github.com/melinaverger/maddlib).
 
 It can be installed using `pip` (with command line `pip install maddlib` or `python3 -m pip install maddlib`).
 
