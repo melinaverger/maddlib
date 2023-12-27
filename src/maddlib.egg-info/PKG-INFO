@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: maddlib
-Version: 0.5.8
+Version: 0.5.9
 Summary: A Python package to compute MADD metric-related functions
 Home-page: https://github.com/melinaverger/maddlib
 Author: Mélina Verger
@@ -19,7 +19,7 @@ Requires-Dist: matplotlib
 Provides-Extra: dev
 Requires-Dist: twine>=4.0.2; extra == "dev"
 
-# MADD package
+# maddlib
 
 [![Generic badge](https://img.shields.io/badge/python-3.10.4-green.svg)](https://shields.io/)
 
@@ -27,19 +27,15 @@ This repository contains the source code of the Python package related to the [M
 
 ## Installation
 
-This package is available on [pypi](https://pypi.org/project/maddlib/) and can be installed using `pip`:
+This package is available on [pypi](https://pypi.org/project/maddlib/).
 
-```
-pip install maddlib
-```
-
-or 
-
-```
-python3 -m pip install maddlib
-```
+It can be installed using `pip` (with command line `pip install maddlib` or `python3 -m pip install maddlib`).
 
 If an error occurs, please check first that your Python version is greater than 3.10.4.
+
+## Getting started
+
+Some example notebooks are in `test` folder. You can use the MADD to evaluate algorithmic fairness or to mitigate algorithmic unfairness.
 
 ## Reference
 
