@@ -1,0 +1,8 @@
+scikit-learn
+pandas
+numpy
+seaborn
+matplotlib
+
+[dev]
+twine>=4.0.2
