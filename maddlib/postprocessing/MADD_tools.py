@@ -1,6 +1,4 @@
 import numpy as np
-from scipy.integrate import quad
-from . import distribution_tools as dt
 
 
 def opt_bandwidth_order(n0, n1):
@@ -35,4 +33,3 @@ def split_sizes(total, proportion):
     n0 = np.floor(total * proportion).astype(int)
     n1 = total - n0
     return n0, n1
-

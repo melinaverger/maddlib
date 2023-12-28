@@ -5,7 +5,7 @@ Define their inverse cumulative distribution functions, in order to generate the
 
 import numpy as np
 from scipy.stats import norm, gamma, expon
-import distribution_tools as dt
+from . import distribution_tools as dt
 
 
 def func0(x):
