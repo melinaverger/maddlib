@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-import optimal_bandwidth
+from . import optimal_bandwidth
 
 
 def separate_pred_proba(X, pred_proba, sf):
