@@ -3,7 +3,7 @@ This file contains functions that are used to build / manipulate / show distribu
 """
 
 import numpy as np
-from scipy.integrate import cumtrapz, quad
+from scipy.integrate import cumulative_trapezoid, quad
 from scipy.interpolate import interp1d
 import matplotlib.pyplot as plt
 
@@ -51,7 +51,7 @@ def pdf_to_cdf(pdf_func, num_points=1000):
     """
     x = np.linspace(0, 1, num_points)
     pdf_values = pdf_func(x)
-    cdf_values = cumtrapz(pdf_values, x, initial=0)
+    cdf_values = cumulative_trapezoid(pdf_values, x, initial=0)
     # Create interpolation function
     cdf_func = interp1d(x, cdf_values, kind='linear', bounds_error=False, fill_value=(0, 1))
     return np.vectorize(cdf_func)
