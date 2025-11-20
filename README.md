@@ -1,6 +1,6 @@
 # maddlib
 
-[![Generic badge](https://img.shields.io/badge/python-3.10.4-green.svg)](https://shields.io/)
+[![Python version](https://img.shields.io/badge/python->3.10.4-brightgreen.svg)](https://www.python.org/)
 
 This repository contains the source code of the Python package related to the [MADD metric](https://github.com/melinaverger/MADD).
 
@@ -14,13 +14,31 @@ If an error occurs, please check first that your Python version is greater than 
 
 ## Getting started
 
-Some example notebooks are in `test` folder. You can use the MADD to evaluate algorithmic fairness or to mitigate algorithmic unfairness.
+Some example notebooks are in `tutorials` folder. You can use the MADD to evaluate algorithmic fairness or to mitigate algorithmic unfairness.
+
+You can find the full documentation here: [https://melinaverger.github.io/documentation-maddlib/](https://melinaverger.github.io/documentation-maddlib/).
 
 ## Reference
 
 If you are using this package, please cite:
 
 > M. Verger, S. Lallé, F. Bouchet, and V. Luengo. Is Your Model ”MADD”? A Novel Metric to Evaluate Algorithmic Fairness for Predictive Student Models. In M. Feng, T. Käser, and P. Talukdar, editors, *Proceedings of the 16th International Conference on Educational Data Mining*, pages 91–102, Bengaluru, India, July 2023. International Educational Data Mining Society.
+
+```LaTex
+@inproceedings{Verger2023,  
+    title = {Is Your Model ``MADD''? A Novel Metric to Evaluate Algorithmic Fairness for Predictive Student Models},  
+    author = {M\'{e}lina Verger and S\'{e}bastien Lall\'{e} and Fran\c{c}ois Bouchet and Vanda Luengo},  
+    booktitle = {Proceedings of the 16th International Conference on Educational Data Mining},  
+    editor = {Mingyu Feng and Tanja KÃ¤ser and Partha Talukdar},  
+    doi = {10.5281/zenodo.8115786},  
+    isbn = {978-1-7336736-4-8},  
+    month = {July},  
+    address = {Bengaluru, India},  
+    pages = {91--102},  
+    publisher = {International Educational Data Mining Society},  
+    year = {2023}  
+}
+```
 
 ## License
 
